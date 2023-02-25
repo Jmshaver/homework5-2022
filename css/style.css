@@ -1,0 +1,123 @@
+body {
+  font-family: 'Poppins', serif;
+  background-color: #f1f1f1;
+  background-image: url('../images/concrete_seamless.png');
+}
+
+
+#logo {
+  animation: logo-animation 5s ease-in-out forwards;
+}
+
+@keyframes logo-animation {
+  0% {
+    width: 25px;
+    opacity: 0;
+  }
+  100% {
+    width: 475px;
+    opacity: 1;
+  }
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_links a:visited {
+  color: #0000EE;
+}
+
+.card > header {
+  background: #288088;
+  border: 2px solid #45ADAD;
+  padding: 20px 0;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+}
+
+.card {
+  flex: 0 0 450px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  border: 10px solid #50C7C7;
+  margin: 10px;
+  width: 300px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    flex-direction: row;
+  }
+  .nav_links{
+    flex-direction: row;
+  }
+  .card {
+    flex: 0 0 275px;
+  }
+
+  body > header {
+    position: sticky;
+    top: 0;
+  }
+  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* CSS styles for users who prefer reduced motion */
+  .logo {
+    width: 475px;
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@media print {
+/* @media screen and (min-width: 900px){ */
+  body{
+    font-family: Arial, Helvetica;
+    background-image: none;
+  }
+  .nav_links{
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+  }
+  .pricing{
+    align-items: flex-end;
+  }
+  .card {
+    border: 2px solid #45ADDD;
+    flex-basis: 215px;
+    /* flex-basis: 325px; I could not get it to look like the picture with this flex-basis*/
+  }
+  #gallery{
+    display: none;
+  }
+  .gallery{
+    display: none;
+  }
+  .card li:nth-child(2)::after{
+    content: "👍";
+  }
+}
